@@ -1,0 +1,35 @@
+<div class="cart-item">
+  <table mat-table [dataSource]="[cartItem]" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+  
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Car & Model </th>
+      <td mat-cell *matCellDef="let element"> {{ cartItem.make }} {{cartItem.model}} </td>
+    </ng-container>
+  
+    <!-- Year Column -->
+    <ng-container matColumnDef="year_model">
+      <th mat-header-cell *matHeaderCellDef> Year of Model </th>
+      <td mat-cell *matCellDef="let element"> {{ cartItem.year_model }} </td>
+    </ng-container>
+  
+    <!-- price Column -->
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef> Price </th>
+      <td mat-cell *matCellDef="let element"> {{cartItem.price | currency:'INR' }} </td>
+    </ng-container>
+
+    <!-- action Column -->
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef> Action </th>
+      <td mat-cell *matCellDef="let element"> <button mat-btn (click)="onDelete(cartItem._id)">Remove</button> </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>

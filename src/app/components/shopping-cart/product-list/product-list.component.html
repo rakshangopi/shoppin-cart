@@ -1,0 +1,14 @@
+<mat-paginator [length]="productListLength" pageSize="12"
+               (page)="getPaginatorData($event)" [pageSizeOptions]="[12, 24, 48, 96]"
+               showFirstLastButtons="false">
+</mat-paginator>
+<div class="row">
+  <div class="col-md-3" *ngFor="let product of productList | 
+  slice: lowValue : highValue">
+    <app-product-item [productItem]="product" [productsGroup]="productsGroup"></app-product-item>
+  </div>
+</div>
+<mat-paginator [length]="productListLength" pageSize="12"
+               (page)="getPaginatorData($event)" [pageSizeOptions]="[12, 24, 48, 96]"
+               showFirstLastButtons="false">
+</mat-paginator>

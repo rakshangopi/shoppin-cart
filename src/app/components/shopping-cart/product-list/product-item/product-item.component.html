@@ -1,0 +1,17 @@
+<div class="card mb-4 shadow-sm">
+  <img class="bd-placeholder-img card-img-top p-2"  src="/assets/no-image.jpg" width="50" />
+
+  <div class="card-body">
+    <p class="card-text">
+      <strong>{{ productItem.price | currency:'INR' }}</strong>
+    </p>
+    <p class="card-text">{{ productItem.make }}</p>
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="btn-group">
+        <button [disabled]="!productItem.licensed || checkAddedCart(productItem._id)" type="button" class="btn btn-sm btn-primary product-btn" (click)="handleAddToCart(productItem._id)" [textContent]="checkAddedCart(productItem._id) ? 'Added' : 'Add to
+        Cart'"></button>
+        <button type="button" [disabled]="!productItem.licensed" class="btn btn-sm btn-outline-secondary product-btn" (click)="viewdetails(productItem)">View Details</button>
+      </div>
+    </div>
+  </div>
+</div>

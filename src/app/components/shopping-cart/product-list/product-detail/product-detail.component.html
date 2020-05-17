@@ -1,0 +1,14 @@
+<div class="wrapper">
+    <div class="wrapper-left">
+      <img src="/assets/no-image.jpg" width="250"  />
+    </div>
+    <div class="wrapper-right">
+      <h4>Warehouse name : {{data.name}}</h4>
+      <h4>Vehicles : {{ data.vehicles.make  }} {{ data.vehicles.model }}</h4>
+      <h4>Manufature Year : {{ data.vehicles.year_model }}</h4>
+      <h4>Price : {{ data.vehicles.price | currency: 'EURO ': 'symbol-narrow' : '1.0' }}</h4>
+      <h4>Date Added : {{ data.vehicles.date_added }}</h4>
+      <h4>Location : {{ data.cars.location }}</h4>
+      <h4>Maps : Lat-{{ data.location.lat }}, long-{{ data.location.long }}</h4>
+    </div>
+</div>
